@@ -36,3 +36,10 @@ add_executable(efzy
 target_compile_options(efzy PUBLIC -pthread)
 target_link_libraries(efzy fzy pthread)
 
+
+add_executable(fzytest
+    test/fzytest.c test/test_properties.c test/test_choices.c test/test_match.c src/choices.c src/options.c
+    deps/theft/theft.c deps/theft/theft_bloom.c deps/theft/theft_mt.c deps/theft/theft_hash.c
+    )
+target_include_directories(fzytest PUBLIC src deps ${CMAKE_BINARY_DIR})
+target_link_libraries(fzytest fzy pthread)
