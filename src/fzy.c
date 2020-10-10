@@ -1,17 +1,15 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <ctype.h>
 #include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
-#include "match.h"
-#include "tty.h"
 #include "choices.h"
+#include "match.h"
 #include "options.h"
+#include "tty.h"
 #include "tty_interface.h"
-
-#include "../config.h"
 
 int main(int argc, char *argv[]) {
 	int ret = 0;

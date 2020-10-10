@@ -5,7 +5,7 @@
 
 #include "match.h"
 #include "tty_interface.h"
-#include "../config.h"
+#include "config.h"
 
 static int isprint_unicode(char c) {
 	return isprint(c) || c & (1 << 7);

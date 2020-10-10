@@ -6,7 +6,7 @@
 
 #include "options.h"
 
-#include "../config.h"
+#include "config.h"
 
 static const char *usage_str =
     ""

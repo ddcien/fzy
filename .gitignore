@@ -4,3 +4,6 @@ fzytest
 *.d
 config.h
 test/acceptance/vendor/bundle
+build/
+.cache/
+compile_commands.json
