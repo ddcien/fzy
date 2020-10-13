@@ -43,3 +43,6 @@ add_executable(fzytest
     )
 target_include_directories(fzytest PUBLIC src deps ${CMAKE_BINARY_DIR})
 target_link_libraries(fzytest fzy pthread)
+
+add_executable(dfzy main.c)
+target_link_libraries(dfzy fzy)

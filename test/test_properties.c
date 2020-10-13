@@ -124,7 +124,7 @@ static theft_trial_res prop_positions_should_match_characters_in_string(char *ne
 	if (!positions)
 		return THEFT_TRIAL_ERROR;
 
-	match_positions(needle, haystack, positions);
+	match_positions(needle, haystack, positions, n);
 
 	/* Must be increasing */
 	for (int i = 1; i < n; i++) {

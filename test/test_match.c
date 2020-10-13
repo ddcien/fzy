@@ -145,7 +145,7 @@ TEST score_long_string() {
 
 TEST positions_consecutive() {
 	size_t positions[3];
-	match_positions("amo", "app/models/foo", positions);
+	match_positions("amo", "app/models/foo", positions, 3);
 	ASSERT_SIZE_T_EQ(0, positions[0]);
 	ASSERT_SIZE_T_EQ(4, positions[1]);
 	ASSERT_SIZE_T_EQ(5, positions[2]);
@@ -159,7 +159,7 @@ TEST positions_start_of_word() {
 	 * of a word.
 	 */
 	size_t positions[4];
-	match_positions("amor", "app/models/order", positions);
+	match_positions("amor", "app/models/order", positions, 4);
 	ASSERT_SIZE_T_EQ(0, positions[0]);
 	ASSERT_SIZE_T_EQ(4, positions[1]);
 	ASSERT_SIZE_T_EQ(11, positions[2]);
@@ -170,11 +170,11 @@ TEST positions_start_of_word() {
 
 TEST positions_no_bonuses() {
 	size_t positions[2];
-	match_positions("as", "tags", positions);
+	match_positions("as", "tags", positions, 2);
 	ASSERT_SIZE_T_EQ(1, positions[0]);
 	ASSERT_SIZE_T_EQ(3, positions[1]);
 
-	match_positions("as", "examples.txt", positions);
+	match_positions("as", "examples.txt", positions, 2);
 	ASSERT_SIZE_T_EQ(2, positions[0]);
 	ASSERT_SIZE_T_EQ(7, positions[1]);
 
@@ -183,7 +183,7 @@ TEST positions_no_bonuses() {
 
 TEST positions_multiple_candidates_start_of_words() {
 	size_t positions[3];
-	match_positions("abc", "a/a/b/c/c", positions);
+	match_positions("abc", "a/a/b/c/c", positions, 3);
 	ASSERT_SIZE_T_EQ(2, positions[0]);
 	ASSERT_SIZE_T_EQ(4, positions[1]);
 	ASSERT_SIZE_T_EQ(6, positions[2]);
@@ -193,7 +193,7 @@ TEST positions_multiple_candidates_start_of_words() {
 
 TEST positions_exact_match() {
 	size_t positions[3];
-	match_positions("foo", "foo", positions);
+	match_positions("foo", "foo", positions, 3);
 	ASSERT_SIZE_T_EQ(0, positions[0]);
 	ASSERT_SIZE_T_EQ(1, positions[1]);
 	ASSERT_SIZE_T_EQ(2, positions[2]);

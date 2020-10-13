@@ -28,24 +28,22 @@
 
 const score_t bonus_states[3][256] = {
     [0] = {0},
-    [1] = {
-        ['/'] = SCORE_MATCH_SLASH,
-        ['-'] = SCORE_MATCH_WORD,
-        ['_'] = SCORE_MATCH_WORD,
-        [' '] = SCORE_MATCH_WORD,
-        ['.'] = SCORE_MATCH_DOT,
-    },
-    [2] = {
-        ['/'] = SCORE_MATCH_SLASH,
-        ['-'] = SCORE_MATCH_WORD,
-        ['_'] = SCORE_MATCH_WORD,
-        [' '] = SCORE_MATCH_WORD,
-        ['.'] = SCORE_MATCH_DOT,
+    [1] =
+        {
+            ['/'] = SCORE_MATCH_SLASH,
+            ['-'] = SCORE_MATCH_WORD,
+            ['_'] = SCORE_MATCH_WORD,
+            [' '] = SCORE_MATCH_WORD,
+            ['.'] = SCORE_MATCH_DOT,
+        },
+    [2] = {['/'] = SCORE_MATCH_SLASH,
+           ['-'] = SCORE_MATCH_WORD,
+           ['_'] = SCORE_MATCH_WORD,
+           [' '] = SCORE_MATCH_WORD,
+           ['.'] = SCORE_MATCH_DOT,
 
-        /* ['a' ... 'z'] = SCORE_MATCH_CAPITAL, */
-        ASSIGN_LOWER(SCORE_MATCH_CAPITAL)
-    }
-};
+           /* ['a' ... 'z'] = SCORE_MATCH_CAPITAL, */
+           ASSIGN_LOWER(SCORE_MATCH_CAPITAL)}};
 
 const size_t bonus_index[256] = {
     /* ['A' ... 'Z'] = 2 */

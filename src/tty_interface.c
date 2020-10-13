@@ -44,7 +44,7 @@ static void draw_match(tty_interface_t* state,
     for (int i = 0; i < n + 1 && i < MATCH_MAX_LEN; i++)
         positions[i] = -1;
 
-    score_t score = match_positions(search, choice, &positions[0]);
+    score_t score = match_positions(search, choice, positions, MATCH_MAX_LEN);
 
     if (options->show_scores) {
         if (score == SCORE_MIN) {
